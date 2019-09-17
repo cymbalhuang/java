@@ -24,7 +24,7 @@ docker run -d -p 9411:9411 openzipkin/zipkin
 
 6.由于zipkin无监控模块，可引入prometheus+grafana进行监控告警，操作如下
 
-7.使用zipkin官方提供的prometheus配置文件https://github.com/openzipkin/docker-zipkin/blob/master/prometheus/prometheus.yml，启动prometheus服务，定时从zipkin获取据数据
+7.使用zipkin官方提供的prometheus配置文件https://github.com/openzipkin/docker-zipkin/blob/master/prometheus/prometheus.yml ，启动prometheus服务，定时从zipkin获取据数据
 
 docker run --privileged=true -d --name prometheus -p 9090:9090 -v /apps/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml prom/prometheus
 
@@ -32,4 +32,4 @@ docker run --privileged=true -d --name prometheus -p 9090:9090 -v /apps/promethe
 
 docker run -d --name grafana -p 3000:3000 grafana/grafana
 
-9.登录grafana（默认用户密码admin/admin）,根据https://grafana.com/grafana/dashboards/1598/revisions提供的模板添加Dashboard，即可完成监控，目前看监控参数不完整。
+9.登录grafana（默认用户密码admin/admin）,根据https://grafana.com/grafana/dashboards/1598/revisions 提供的模板添加Dashboard，即可完成监控，目前看监控参数不完整。
